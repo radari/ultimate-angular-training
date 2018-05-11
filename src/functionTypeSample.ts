@@ -17,4 +17,5 @@
     console.log(`Drive mode is '${driveMode}' with ${nbWheels} active wheels`);
 
     enableDriveMode(2);
+    console.log(`Drive mode is '${driveMode}' with ${nbWheels} active wheels`);
 }
