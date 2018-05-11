@@ -6,7 +6,7 @@
     // note that the second argument is optional -> see the '?'
     let enableDriveMode: (nbDrivingWheels: number, drivingMode?: 'sand' | 'road' | 'gravel') => void;
 
-    enableDriveMode = (nbDrivingWheels, drivingMode) => {
+    enableDriveMode = (nbDrivingWheels, drivingMode = 'sand') => {
         if (drivingMode) {
             driveMode = drivingMode;
         }
