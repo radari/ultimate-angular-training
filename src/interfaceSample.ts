@@ -3,6 +3,7 @@
         brand: string,
         model: string,
         fuel: 'gas' | 'diesel' | 'electric',
+        maxSpeed?: number,
 
         getName(): string
     }
@@ -27,12 +28,13 @@
         model: 'P Serie',
         fuel: 'diesel',
         maxPayload: 25000,
+        maxSpeed: 164,
 
         getName: function() {
             return `${this.brand} ${this.model} truck - max payload = ${this.maxPayload}`;
         }
     };
 
-    console.log(myCar.getName());
-    console.log(myTruck.getName());
+    console.log(myCar.getName(), myCar.maxSpeed);
+    console.log(myTruck.getName(), myTruck.maxSpeed);
 }
