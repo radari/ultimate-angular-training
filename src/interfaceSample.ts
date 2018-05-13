@@ -7,6 +7,10 @@
         getName(): string
     }
 
+    interface Truck extends Vehicule {
+        maxPayload: number;
+    }
+
 
     const myCar: Vehicule = {
         brand: 'BMW',
@@ -14,9 +18,21 @@
         fuel: 'gas',
 
         getName: function() {
-            return `${this.brand} ${this.model}`
+            return `${this.brand} ${this.model}`;
+        }
+    };
+
+    const myTruck: Truck = {
+        brand: 'Scania',
+        model: 'P Serie',
+        fuel: 'diesel',
+        maxPayload: 25000,
+
+        getName: function() {
+            return `${this.brand} ${this.model} truck - max payload = ${this.maxPayload}`;
         }
     };
 
     console.log(myCar.getName());
+    console.log(myTruck.getName());
 }
