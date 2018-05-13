@@ -5,6 +5,9 @@
         fuel: 'gas' | 'diesel' | 'electric',
         maxSpeed?: number,
 
+        // index signature -> allows to dynamically add properties to data structure
+        [key: number]: number,
+
         getName(): string
     }
 
@@ -34,6 +37,9 @@
             return `${this.brand} ${this.model} truck - max payload = ${this.maxPayload}`;
         }
     };
+
+    // example of how to exploit index signatures to dynamically add property to an existing data structure
+    myTruck[5] = 5;
 
     console.log(myCar.getName(), myCar.maxSpeed);
     console.log(myTruck.getName(), myTruck.maxSpeed);
