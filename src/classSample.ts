@@ -1,5 +1,5 @@
 {
-    class Vehicle {
+    abstract class Vehicle {
         brand: string;
         model: string;
         features: string[] = [];
