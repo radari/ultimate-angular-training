@@ -11,20 +11,24 @@
             this.model = model;
         }
 
-        addFeatures(feature: string): void {
-            this.features.push(feature);
+        get availableFeatures() {
+            return this.features;
         }
 
-        clearFeatures(): void {
-            this.features = [];
+        set availableFeatures(features: string []) {
+            this.features = features;
         }
     }
 
     let myCar: Car = new Car('McLaren', 'P1', 'x', 'Stellar blue', 'ZAPC16C1435072584');
-    myCar.addFeatures('satnav');
-    myCar.addFeatures('metallic painting');
     console.log(myCar);
-    myCar.clearFeatures();
+
+    // --> will actually invoke the 'availableFeatures' setter
+    myCar.availableFeatures = ['GPS', 'Rear view camera'];
+
+    // --> will actually invoke the 'availableFeatures' getter
+    console.log(myCar.availableFeatures);
+
     console.log(myCar);
     console.log(myCar.color);
     console.log(myCar.vin);
